@@ -40,21 +40,33 @@ app.message(async ({ message, say }) => {
       userLevels[user] = text;
       try {
         const response = await openai.createChatCompletion({
-          model: "gpt-4",
+          model: "text-davinci-003", // GPT-3.5 Turbo model
           messages: [
             { role: "system", content: `You are a helpful assistant for generating coding project ideas.` },
             { role: "user", content: `Generate a coding project idea for a ${text} level programmer.` }
           ],
         });
 
-        const idea = response.data.choices[0].message.content;
-        console.log('Generated idea:', idea);
-        await say({
-          text: `Here is a project idea for a ${text} level programmer:\n${idea}`,
-          thread_ts: message.thread_ts,
-        });
+        if (response && response.data && response.data.choices && response.data.choices.length > 0) {
+          const idea = response.data.choices[0].message.content;
+          console.log('Generated idea:', idea);
+          await say({
+            text: `Here is a project idea for a ${text} level programmer:\n${idea}`,
+            thread_ts: message.thread_ts,
+          });
+        } else {
+          console.error('Invalid response from OpenAI:', response);
+          await say({
+            text: `I'm sorry, I couldn't generate a project idea at the moment. Please try again later.`,
+            thread_ts: message.thread_ts,
+          });
+        }
       } catch (error) {
         console.error('Error generating project idea:', error);
+        await say({
+          text: `I'm sorry, there was an error generating a project idea. Please try again later.`,
+          thread_ts: message.thread_ts,
+        });
       }
     }
   }
@@ -62,5 +74,5 @@ app.message(async ({ message, say }) => {
 
 (async () => {
   await app.start();
-  console.log('!!⚡️ Slack bot is running!');
+  console.log('⚡️ Slack bot is running!');
 })();
