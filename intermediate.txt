@@ -1,0 +1,103 @@
+Simple Chat Application with WebSockets
+Personal Budget Management System
+Weather Forecasting Application with API
+Simple Social Media Platform
+Recipe App with User Accounts
+To-Do List App with User Authentication
+Blog Platform with Comments and Likes
+Online Voting System
+Simple E-commerce Site with Cart
+Quiz App with Multiple Categories
+Task Manager with Deadlines and Notifications
+Movie Recommendation System
+Real-Time Stock Price Tracker
+Expense Tracker with Graphs
+Simple Content Management System (CMS)
+Portfolio Website with Admin Panel
+Chatbot with NLP Capabilities
+Basic Travel Booking System
+Online Survey Tool
+Image Gallery with Upload and Edit
+Simple Messaging App with File Sharing
+Digital Library System
+Job Portal with Resume Upload
+Event Management System
+Online Examination System
+Multi-user Blogging Platform
+Simple Project Management Tool
+Personal Fitness Tracker
+Online Discussion Forum
+Online Auction System
+Basic Music Streaming Service
+Recipe App with Ingredient Substitution
+Simple Video Streaming Platform
+Collaborative Document Editor
+Online Bookstore
+Task Automation Tool
+Simple CRM System
+Basic Learning Management System (LMS)
+User Role Management System
+Personal Finance Dashboard
+Online Resume Builder
+Simple Multiplayer Game
+Event Booking System
+Simple Podcast App
+URL Shortener with Analytics
+Simple Polling App with Results
+Basic E-learning Platform
+Online Photo Editor
+Simple Travel Planner
+Habit Tracker with Statistics
+Task Scheduler with Notifications
+Simple Job Scheduling System
+Basic ERP System
+Online Marketplace
+Social Media Dashboard
+Simple News Aggregator
+Real-Time Collaboration Tool
+User Authentication with OAuth
+Basic Online Store
+Contact Management System
+Fitness App with Workout Plans
+Simple IoT Dashboard
+Online Ticket Booking System
+Restaurant Reservation System
+Simple Online Quiz Platform
+Personal Knowledge Base
+Book Recommendation System
+Online Grocery Shopping App
+Simple Video Editing Tool
+Time Tracking Application
+Project Collaboration Tool
+Basic Email Client
+Simple File Sharing Platform
+Task List with Drag and Drop
+Online Portfolio with Blog
+Expense Sharing App
+Simple Personal Dashboard
+Online Fundraising Platform
+Travel Expense Tracker
+Simple Blog with Markdown Support
+Music Playlist Manager
+Recipe Finder with API
+Basic Project Tracker
+Simple Habit Formation App
+Online Learning Portal
+Daily Planner App
+Simple Personal Wiki
+Recipe Organizer
+Time Management App
+Online Classroom
+Simple Document Management System
+Diet and Nutrition Tracker
+Basic Web-based IDE
+Simple Code Snippet Manager
+Basic Cryptocurrency Tracker
+Simple Kanban Board
+Fitness Challenge App
+Recipe Sharing Platform
+Simple File Encryption Tool
+Basic Customer Support System
+Online Portfolio with Projects
+Simple Media Library
+Expense Logger with Reports

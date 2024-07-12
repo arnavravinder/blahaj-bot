@@ -1,0 +1,103 @@
+Hello World Program
+Basic Calculator
+Temperature Converter (Celsius to Fahrenheit)
+Number Guessing Game
+Simple Alarm Clock
+Countdown Timer
+BMI Calculator
+Palindrome Checker
+Fibonacci Sequence Generator
+Prime Number Checker
+Simple Chatbot
+To-Do List App
+Basic Web Scraper
+Unit Converter
+Tip Calculator
+Simple Quiz Game
+Random Password Generator
+Weather App
+Tic-Tac-Toe Game
+Simple Login System
+Basic CRUD Application
+Digital Clock
+Word Counter
+Simple Contact Book
+Rock, Paper, Scissors Game
+Flashcard App
+Currency Converter
+Basic Budget Tracker
+Simple File Renamer
+Basic Web Crawler
+Note Taking App
+Simple Image Gallery
+Basic Blog
+Markdown to HTML Converter
+Simple Portfolio Website
+Number Base Converter
+URL Shortener
+Simple Stopwatch
+Basic Text Editor
+Quiz App with Scoreboard
+Simple Drawing App
+Unit Test Suite
+Simple Calendar
+Number Sorting Algorithm
+Weather Forecast App
+Simple API Client
+Basic E-commerce Site
+Personal Journal
+Simple Encryption Tool
+Basic Chat Application
+Command Line To-Do List
+Basic Web Form
+Simple Game of Life
+Basic Paint Program
+Simple Polling App
+Hangman Game
+Simple Reminder App
+Basic File Organizer
+Basic Data Visualizer
+Simple Virtual Pet Game
+Basic Music Player
+Simple Blog CMS
+Basic Quiz Maker
+Simple Recipe App
+Basic Forum
+Simple Flashlight App
+Basic URL Redirector
+Simple Video Player
+Basic Task Manager
+Simple Meditation Timer
+Basic Expense Tracker
+Simple Meme Generator
+Basic Habit Tracker
+Simple Recipe Converter
+Basic Color Picker
+Simple Dice Roller
+Basic Inventory System
+Simple Map App
+Basic Spell Checker
+Simple Health Tracker
+Basic Mood Tracker
+Simple Workout Log
+Basic Calendar Scheduler
+Simple Graph Plotter
+Basic Markdown Editor
+Simple Text Formatter
+Basic Network Scanner
+Simple Portfolio Tracker
+Basic Password Manager
+Simple Heatmap Generator
+Basic Web Analytics
+Simple Data Scrubber
+Basic Survey Tool
+Simple Stock Tracker
+Basic Time Tracker
+Simple Loan Calculator
+Basic Progress Tracker
+Simple Expense Splitter
+Basic Habit Logger
+Simple Fitness Tracker
+Basic Cooking Timer
+Simple Task Timer
+Basic URL Monitor

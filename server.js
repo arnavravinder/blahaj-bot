@@ -43,14 +43,24 @@ app.event('app_mention', async ({ event, client }) => {
 
       if (level && ideas[level]) {
         const ideasList = ideas[level];
+        console.log(`Ideas list for ${level}:`, ideasList); // Log the ideas list for debugging
         const randomIndex = Math.floor(Math.random() * ideasList.length);
-        const idea = ideasList[randomIndex];
-
-        await client.chat.postMessage({
-          channel: event.channel,
-          thread_ts: event.thread_ts,
-          text: `Here is a project idea for ${level} programmers:\n${idea}`,
-        });
+        
+        if (ideasList[randomIndex]) {
+          const idea = ideasList[randomIndex];
+          await client.chat.postMessage({
+            channel: event.channel,
+            thread_ts: event.thread_ts,
+            text: `Here is a project idea for ${level} programmers:\n${idea}`,
+          });
+        } else {
+          console.error(`Empty idea found at index ${randomIndex} in ${level} ideas list.`);
+          await client.chat.postMessage({
+            channel: event.channel,
+            thread_ts: event.thread_ts,
+            text: `Sorry, I couldn't find a project idea right now. Please try again later.`,
+          });
+        }
       } else {
         await client.chat.postMessage({
           channel: event.channel,
@@ -62,7 +72,7 @@ app.event('app_mention', async ({ event, client }) => {
       await client.chat.postMessage({
         channel: event.channel,
         thread_ts: event.ts,
-        text: `Please reply in a thread to get project ideas. Mention me (@bot-name) again with your coding experience level.`,
+        text: `Please reply in a thread to get project ideas. Mention me (@Blåhaj) again with your coding experience level. For now, I only support [beginner, novice, newbie, intermediate, intermed, advanced and expert`,
       });
     }
   } catch (error) {
@@ -72,7 +82,7 @@ app.event('app_mention', async ({ event, client }) => {
 
 (async () => {
   await app.start();
-  console.log('⚡️ Slack bot is running!!');
+  console.log('⚡️ Slack bot is running!');
 })();
 
 function getLevel(text) {
