@@ -24,59 +24,35 @@ function readIdeasFromFile(filename) {
   }
 }
 
-app.event('app_mention', async ({ event, client }) => {
-  try {
-    console.log('app_mention event received:', event);
+app.command('/idea', async ({ command, ack, client }) => {
+  await ack();
+  const text = command.text.toLowerCase();
+  const level = getLevel(text);
 
-    // Check if the mention is in a thread
-    if (event.thread_ts) {
-      const thread = await client.conversations.replies({
-        channel: event.channel,
-        ts: event.thread_ts
+  if (level && ideas[level]) {
+    const ideasList = ideas[level];
+    const randomIndex = Math.floor(Math.random() * ideasList.length);
+    if (ideasList[randomIndex]) {
+      const idea = ideasList[randomIndex];
+      await client.chat.postEphemeral({
+        channel: command.channel_id,
+        user: command.user_id,
+        text: `💡 Here is a project idea for ${level} programmers:\n${idea}!`,
       });
-
-      const userReply = thread.messages[thread.messages.length - 1]; // Get the latest reply in the thread
-      const text = userReply.text.toLowerCase();
-      const level = getLevel(text);
-
-      console.log(`User response in thread: ${text}, Level detected: ${level}`);
-
-      if (level && ideas[level]) {
-        const ideasList = ideas[level];
-        console.log(`Ideas list for ${level}:`, ideasList); // Log the ideas list for debugging
-        const randomIndex = Math.floor(Math.random() * ideasList.length);
-        
-        if (ideasList[randomIndex]) {
-          const idea = ideasList[randomIndex];
-          await client.chat.postMessage({
-            channel: event.channel,
-            thread_ts: event.thread_ts,
-            text: `💡 Here is a project idea for ${level} programmers:\n${idea}!`,
-          });
-        } else {
-          console.error(`Empty idea found at index ${randomIndex} in ${level} ideas list.`);
-          await client.chat.postMessage({
-            channel: event.channel,
-            thread_ts: event.thread_ts,
-            text: `🦑 Sorry, I couldn't find a project idea right now. Please try again later.`,
-          });
-        }
-      } else {
-        await client.chat.postMessage({
-          channel: event.channel,
-          thread_ts: event.thread_ts,
-          text: `🌊 Please specify your coding experience level as 'beginner', 'intermediate', or 'advanced'.`,
-        });
-      }
     } else {
-      await client.chat.postMessage({
-        channel: event.channel,
-        thread_ts: event.ts,
-        text: `🦈 Please reply in a thread to get project ideas. Mention me (@Blåhaj) again with your coding experience level. For now, I only support [beginner, novice, newbie, intermediate, intermed, advanced and expert]`,
+      console.error(`Empty idea found at index ${randomIndex} in ${level} ideas list.`);
+      await client.chat.postEphemeral({
+        channel: command.channel_id,
+        user: command.user_id,
+        text: `🦑 Sorry, I couldn't find a project idea right now. Please try again later.`,
       });
     }
-  } catch (error) {
-    console.error('Error in app_mention event handler:', error);
+  } else {
+    await client.chat.postEphemeral({
+      channel: command.channel_id,
+      user: command.user_id,
+      text: `🌊 Please specify your coding experience level as 'beginner', 'intermediate', or 'advanced'.`,
+    });
   }
 });
 
@@ -86,9 +62,8 @@ app.event('app_mention', async ({ event, client }) => {
 })();
 
 function getLevel(text) {
-  const lowerText = text.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+  const lowerText = text.toLowerCase();
 
-  // Check for common phrases indicating skill levels
   if (lowerText.includes('beginner') || lowerText.includes('novice') || lowerText.includes('newbie')) {
     return 'beginner';
   } else if (lowerText.includes('intermediate') || lowerText.includes('intermed')) {
@@ -97,6 +72,5 @@ function getLevel(text) {
     return 'advanced';
   }
 
-  // Default to null if no match found
   return null;
 }
